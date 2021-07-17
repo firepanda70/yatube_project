@@ -1,10 +1,23 @@
+from typing import ContextManager
 from django.http import HttpResponse
 from django.shortcuts import render
 
 def index(request):
     template = 'posts/index.html'
-    return render(request, template)
+    text = 'Это главная страница проекта Yatube'
+    title = 'Последние обновления на сайте'
+    context = {
+        'title': title,
+        'text': text
+    }
+    return render(request, template, context)
 
 def group_posts(request, slug):
     template = 'posts/group_list.html'
-    return render(request, template)
+    title = f'Страница группы {slug}'
+    text = 'Здесь будет информация о группах проекта Yatube'
+    context = {
+        'title': title,
+        'text': text
+    }
+    return render(request, template, context)
