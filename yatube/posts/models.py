@@ -31,11 +31,11 @@ class Post(models.Model):
         blank=True,
         null=True,
         on_delete=models.SET_NULL,
-        related_name='group'
+        related_name='posts'
     )
 
     class Meta:
-        ordering = ['-pub_date']
+        ordering = ('-pub_date', )
         verbose_name = 'Post'
 
     def __str__(self):
