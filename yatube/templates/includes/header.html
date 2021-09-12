@@ -1,13 +1,15 @@
-{% load static %}
-<!-- Использованы классы бустрапа для создания типовой навигации с логотипом -->
-<!-- В дальнейшем тут будет создано полноценное меню -->    
-<nav class="navbar navbar-light" style="background-color: lightskyblue">
+{% load static %} 
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: lightskyblue">
   <div class="container">
-    <!-- ссылка должна вести на главную страницу -->
-    <a class="navbar-brand" href="{% url 'posts:posts' %}">
+    <a class="navbar-brand" href="{% url 'posts:index' %}">
       <img src="{% static "img/logo.png" %}" width="30" height="30" class="d-inline-block align-top" alt="">
-      <!-- тег span используется для добавления нужных стилей отдельным участкам текста -->
       <span style="color:red">Ya</span>tube
     </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbar-example" aria-controls="navbar-example"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    {% include 'includes/nav.html' %}
   </div>
 </nav>   
