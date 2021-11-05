@@ -146,7 +146,7 @@ dmypy.json
 .mypy_cache
 
 # Static files
-yatube/static/
+# yatube/static/
 
 # Media files
 yatube/media
