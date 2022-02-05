@@ -14,5 +14,3 @@ pip install -r requirements.txt
 ```
 python manage.py runserver
 ```
-### Автор
-Кочуров Михаил
