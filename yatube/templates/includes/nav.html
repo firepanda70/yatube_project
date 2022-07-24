@@ -1,8 +1,4 @@
-{% comment %}
-Выпадающее меню пока не работает. Так задумано (пока что)
-{% endcomment %}
 {% with request.resolver_match.view_name as view_name %}
-<div class="collapse navbar-collapse" id="navbar-example">
   <ul class="navbar-nav mr-auto">
     <li class="nav-item"> 
       <a class="nav-link {% if view_name  == 'about:me' %}active{% endif %}" 
@@ -56,5 +52,4 @@
       </li>
     {% endif %}
   </ul>
-</div>
 {% endwith %} 
