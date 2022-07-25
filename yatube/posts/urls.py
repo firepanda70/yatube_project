@@ -8,8 +8,6 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('group/<slug:slug>/', views.group_posts, name='group'),
     path('new/', views.post_create, name='post_create'),
-    # path('404/', views.page_not_found),
-    # path('500/', views.server_error),
     path('follow/', views.follow_index, name='follow_index'),
     path('<username>/', views.profile, name='profile'),
     path('<username>/<int:post_id>/', views.post_detail, name='post_detail'),

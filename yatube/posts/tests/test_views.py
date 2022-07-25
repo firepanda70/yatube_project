@@ -16,7 +16,6 @@ from django.urls import reverse
 from posts.models import Follow, Group, Post, User
 
 UTF_OFFSET = dt.datetime.utcnow()
-# меньше 1 рабоать не будет :)
 POSTS_COUNT = 15
 POST_PER_PAGE_COUNT = 10
 

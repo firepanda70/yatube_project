@@ -13,9 +13,10 @@
 
 ### Запуск проекта в dev-режиме
 - Установите и активируйте виртуальное окружение
-- Создайте в корневой директоории файл .env c переменной DJANGO_KEY:
+- Добавьте переменные среды в файл .env:
 ```
 DJANGO_KEY=SECRET
+ALLOWED_HOSTS=localhost,127.0.0.1
 ```
 - Установите зависимости из файла requirements.txt
 ```
@@ -25,7 +26,13 @@ pip install -r requirements.txt
 ```
 python manage.py migrate
 ```
-- В папке с файлом manage.py выполните команду:
+- Загрузите тестовые данные:
+```
+python manage.py loaddata fixtures.json
+# Суперюзер тестовых данных: firep
+# Пароль: admin
+```
+- Запустите сервер:
 ```
 python manage.py runserver
 ```
