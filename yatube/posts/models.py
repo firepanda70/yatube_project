@@ -93,9 +93,9 @@ class Comment(models.Model):
     )
     text = models.TextField('Текст', help_text='Текст комментария')
     created = models.DateTimeField(
-        'Дата и время',
+        'Дата добавления',
         auto_now_add=True,
-        help_text='Дата и время комментария',
+        help_text='Дата добавления комментария',
         db_index=True
     )
 
@@ -120,9 +120,9 @@ class Follow(models.Model):
         verbose_name='Подписчик',
         on_delete=models.CASCADE,
         related_name='follower',
-        help_text='Подписчик пользователя'
+        help_text='Подписчик автора'
     )
-    author = models.ForeignKey(
+    following = models.ForeignKey(
         User,
         verbose_name='Автор',
         on_delete=models.CASCADE,
@@ -131,11 +131,12 @@ class Follow(models.Model):
     )
 
     class Meta():
-        ordering = ('author', )
+        ordering = ('following', )
         verbose_name = 'Подписческа'
-        unique_together = ('user', 'author',)
+        verbose_name_plural = 'Подписчески'
+        unique_together = ('user', 'following',)
 
     def __str__(self):
         return (f'Подписка {self.user.get_full_name()} '
-                f'({self.user.username}) на {self.author.get_full_name()} '
-                f'({self.author.username})')
+                f'({self.user.username}) на {self.following.get_full_name()} '
+                f'({self.following.username})')

@@ -26,5 +26,5 @@ class AdminZoneComment(admin.ModelAdmin):
 
 @admin.register(Follow)
 class AdminZoneFollow(admin.ModelAdmin):
-    list_display = ('pk', 'user', 'author',)
+    list_display = ('pk', 'user', 'following',)
     list_filter = ('user',)
