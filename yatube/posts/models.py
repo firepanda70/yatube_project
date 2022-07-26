@@ -17,6 +17,8 @@ class Group(models.Model):
 
     class Meta:
         verbose_name = 'Группа'
+        verbose_name_plural = 'Группы'
+
 
     def __str__(self):
         return str(self.title)
@@ -56,6 +58,8 @@ class Post(models.Model):
     class Meta:
         ordering = ('-pub_date', )
         verbose_name = 'Пост'
+        verbose_name_plural = 'Посты'
+
 
     def __str__(self):
         fullname = self.author.get_full_name()
@@ -91,12 +95,15 @@ class Comment(models.Model):
     created = models.DateTimeField(
         'Дата и время',
         auto_now_add=True,
-        help_text='Дата и время комментария'
+        help_text='Дата и время комментария',
+        db_index=True
     )
 
     class Meta():
         ordering = ('created', )
         verbose_name = 'Комментарий'
+        verbose_name_plural = 'Комментарии'
+
 
     def __str__(self):
         fullname = self.author.get_full_name()
